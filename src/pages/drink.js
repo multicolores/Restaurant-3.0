@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Header from "../components/header"
 
 import svg from "../images/pattern.svg"
 
@@ -12,15 +13,8 @@ const Drink = () => (
     <SEO title="Drink" />
 
     <div className="eat_page">
-        <section className="header_section">
-        <Image alt="Gatsby in Space" filename="drink.jpg" />
-         <div className="text_container">
-          <h1>Our Drinks</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, praesentium non! Corrupti, officiis.</p>
-            <a href="#drinks">Have a look</a>  
-         </div>
-      
-        </section>
+       <Header siteTitle="Drink"/>
+
 
         <div className="container" id="drinks">
 

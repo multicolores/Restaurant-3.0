@@ -9,7 +9,7 @@ import Header from "../components/header"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Header />
+    <Header siteTitle="Home"/>
 
     <div className="visit_page">
         {/* <section className="header_section">
@@ -42,7 +42,7 @@ const IndexPage = () => (
                     </div>
                 </div>
             </section>
-            <section className="about">
+            <section className="about" id="about">
                 <div className="text">
                     <h4>Our story</h4>
                     <h2>About us</h2>

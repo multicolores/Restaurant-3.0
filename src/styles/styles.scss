@@ -72,63 +72,71 @@ h2 {
     overflow: 1;
   }
 }
-
-header {
+//! NAV
+nav {
+  position: fixed;
+  background: $background_color;
+  top: 0;
+  left: 0;
   width: 100%;
-  position: relative;
-  nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  .nav_container {
+    width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 5;
-    .nav_container {
-      width: 80%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    @media (max-width: 480px) {
+      width: 95%;
+    }
+    a {
+      text-decoration: none;
+      color: $text_color;
+      font-size: 1.3em;
+      cursor: pointer;
+    }
+    .logo {
       a {
-        text-decoration: none;
-        color: $text_color;
-        font-size: 1.3em;
-        cursor: pointer;
+        font-size: 2.5em;
+        font-family: $bold_font;
       }
-      .logo {
-        a {
-          font-size: 2.5em;
-          font-family: $bold_font;
+    }
+    .links {
+      a {
+        margin-left: 50px;
+        position: relative;
+        transition: 0.5s;
+        @media (max-width: 390px) {
+          margin-left: 20px;
         }
-      }
-      .links {
-        a {
-          margin-left: 50px;
-          position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          height: 1px;
+          width: 100%;
+          transform: scale(0);
+          background: rgba(255, 255, 255, 0.753);
           transition: 0.5s;
+        }
+        &:hover {
           &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            height: 2px;
-            width: 100%;
-            transform: scale(0);
-            background: white;
             transition: 0.5s;
-          }
-          &:hover {
-            &::after {
-              transition: 0.5s;
-              transform: scale(1);
-            }
+            transform: scale(1);
           }
         }
       }
     }
   }
+}
+//! HEADER
+header {
+  width: 100%;
+  position: relative;
   .header_container {
     width: 100%;
     height: 75vh;
@@ -142,6 +150,15 @@ header {
         font-family: $bold_font;
         color: $text_color;
         font-size: 10em;
+        text-align: center;
+      }
+      .home_title {
+        @media (max-width: 1000px) {
+          font-size: 15vw;
+        }
+        @media (max-width: 550px) {
+          font-size: 10vw;
+        }
       }
       p {
         color: white;
@@ -154,6 +171,9 @@ header {
     margin-left: 50%;
     transform: translateX(-50%);
     width: 80%;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
 }
 
@@ -411,15 +431,19 @@ header {
       align-items: center;
       flex-wrap: wrap;
       text-align: center;
+      padding-top: 11vh;
       margin-bottom: 25%;
       @media (max-width: 630px) {
         margin-bottom: 50%;
       }
       .text {
         width: 60%;
-        margin-bottom: 5%;
+        margin-bottom: 10%;
         @media (max-width: 1000px) {
           width: 75%;
+        }
+        @media (max-width: 600px) {
+          width: 100%;
         }
       }
       .images_div {
@@ -457,6 +481,14 @@ header {
           width: 50%;
         }
       }
+      .image_container {
+        @media (max-width: 700px) {
+          width: 80%;
+        }
+        @media (max-width: 500px) {
+          width: 90%;
+        }
+      }
       .image {
         width: 100%;
       }
@@ -479,6 +511,9 @@ header {
       justify-content: center;
       align-items: center;
       margin-bottom: 10%;
+      @media (max-width: 700px) {
+        margin-bottom: 30%;
+      }
       .images_container {
         width: 100%;
         height: 100%;
@@ -486,6 +521,9 @@ header {
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
+        @media (max-width: 700px) {
+          height: auto;
+        }
         div {
           width: 30%;
           height: 80%;
@@ -496,6 +534,7 @@ header {
           }
           @media (max-width: 700px) {
             width: 70%;
+            height: 50vh;
             margin-bottom: 15%;
           }
           .image {
@@ -533,6 +572,12 @@ header {
   border-top: 1px solid $text_color;
   .text_container {
     width: 45%;
+    @media (max-width: 950px) {
+      width: 65%;
+    }
+    @media (max-width: 600px) {
+      width: 85%;
+    }
   }
   p {
     text-align: center;

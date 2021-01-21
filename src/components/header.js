@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import Image from "../components/image"
 
@@ -8,34 +7,53 @@ const Header = ({ siteTitle }) => {
     //   const Content =  `    <h1>Restaurant</h1>
     //   <p>32 rue du Maréchale a Laville</p>`;
     // }
-  return(
-    <header>
-    <nav>
-      <div className="nav_container">
-        <div className="logo">
-          <Link to="/" >
-            logo
-          </Link>
-        </div>
-        <div className="links">
-          <Link to="/eat">Eat</Link>
-          <Link to="/drink">Visit</Link>
-          <Link to="/eat">About</Link>
-        </div>
-      </div>
-    </nav>
-    <div className="header_container">
-    <div className="text_container">
-      <h1>Restaurant</h1>
-      <p>32 rue du Maréchale a Laville</p>
-    </div>
-    </div>
 
+    if ( siteTitle === "Home"){
+      return(
+        <header>
 
-    <Image alt="image du restaurant" filename="home_visit.jpg" />
-    {/* {Content} */}
-  </header>
-  )
+          <div className="header_container">
+          <div className="text_container">
+            <h1 className="home_title">Restaurant</h1>
+            <p>32 rue du Maréchale a Laville</p>
+          </div>
+          </div>
+    
+          <Image alt="image du restaurant" filename="home_visit.jpg" />
+      </header>
+      );
+    }
+    else if ( siteTitle === "Eat"){
+      return(
+        <header>
+          <div className="header_container">
+          <div className="text_container">
+            <h1>Eat</h1>
+          </div>
+          </div>
+    
+        <Image alt="image du restaurant" filename="home_eat.jpg" />
+        {/* {Content} */}
+      </header>
+      );
+    }
+    else if ( siteTitle === "Drink"){
+      return(
+        <header>
+        
+          <div className="header_container">
+          <div className="text_container">
+            <h1>Drink</h1>
+          </div>
+          </div>
+    
+    
+        <Image alt="image du restaurant" filename="drink.jpg" />
+        {/* {Content} */}
+      </header>
+      );
+    }
+  
 } 
 
 
