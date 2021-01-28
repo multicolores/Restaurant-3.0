@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import "../styles/styles.scss"
 
@@ -30,7 +31,9 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </nav>
-        <main>{children}</main>
+        <PageTransition>
+          <main>{children}</main>
+        </PageTransition>
         <section className="footer">
             <div className="text_container">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
